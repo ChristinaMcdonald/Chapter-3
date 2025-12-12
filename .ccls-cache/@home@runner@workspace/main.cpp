@@ -1,13 +1,26 @@
 #include <iostream>
+#include <cmath>
+#include <iomanip>
 int main() {
-int cookies;
-std::cout << "How many cookies do you want to make? ";
-std::cin >> cookies;
-double sugar = 1.5 * (cookies / 48.0);
-double butter = 1.0 * (cookies / 48.0);
-double flour = 2.75 * (cookies / 48.0);
-std::cout << "Cups of sugar needed: " << sugar << std::endl;
-std::cout << "Cups of butter needed: " << butter << std::endl;
-std::cout << "Cups of flour needed: " << flour << std::endl;
+double principal, rate, amount, interest;
+int times;
+std::cout << "Enter the principal amount: ";
+std::cin >> principal;
+std::cout << "Enter the interest rate (as a decimal): ";
+std::cin >> rate;
+std::cout << "Enter the number of times interest is compounded per
+year: ";
+std::cin >> times;
+amount = principal * std::pow(1 + (rate / times), times);
+interest = amount - principal;
+std::cout << std::endl;
+std::cout << "Interest Rate: " << std::fixed
+<< std::setprecision(2) << (rate * 100) << "%"
+<< std::endl;
+std::cout << "Times Compounded: " << times << std::endl;
+std::cout << "Principal: $" << std::fixed
+<< std::setprecision(2) << principal << std::endl;
+std::cout << "Interest: $" << interest << std::endl;
+std::cout << "Amount in Savings: $" << amount << std::endl;
 return 0;
 }
