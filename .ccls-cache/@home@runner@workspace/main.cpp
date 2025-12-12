@@ -8,8 +8,7 @@ std::cout << "Enter the principal amount: ";
 std::cin >> principal;
 std::cout << "Enter the interest rate (as a decimal): ";
 std::cin >> rate;
-std::cout << "Enter the number of times interest is compounded per
-year: ";
+std::cout << "Enter the number of times interest is compounded per year: ";
 std::cin >> times;
 amount = principal * std::pow(1 + (rate / times), times);
 interest = amount - principal;
